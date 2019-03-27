@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable and professional web design">
+	  <meta name="keywords" content="web design, affordable web design, professional web design">
+  	<meta name="author" content="Mert Efe">
+    <title> Mert Efe | Hosgeldiniz </title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script>
+
+/* OPERATOR */
+    function calc() {
+         var a = parseInt(document.getElementById('n1').value);
+         var b = parseInt(document.getElementById('n2').value);
+         var ıslem = document.getElementById('operators').value;
+         if (ıslem == '+')
+         {
+           document.getElementById('result').value = a + b;
+         }
+         else if (ıslem== '-')
+         {
+           document.getElementById('result').value = a - b;
+         }
+          else if (ıslem== '/')
+         {
+           document.getElementById('result').value = a / b;
+         }
+          else if (ıslem== 'x')
+         {
+           document.getElementById('result').value = a * b;
+         }
+       }
+
+     /* OPERATOR */
+
+
+
+    var i = 0; // Start point
+    var images = [];
+    var time = 2000;
+
+    // Image List
+    images[0] = './img/logo_html.png'
+    images[1] = './img/logo_css.png';
+    images[2] = './img/image1.jpg';
+    images[3] = './img/showcase.jpg';
+
+    // Change Image
+    function changeImg(){
+      document.resim.src = images[i];
+
+      if(i < images.length - 1){
+        i++;
+      } else {
+        i = 0;
+      }
+
+      setTimeout("changeImg()", time);
+    }
+
+    window.onload = changeImg;
+
+
+    function myFunction()
+    {
+
+     document.getElementById("abc").src = './img/image1.jpg';
+    }
+    function myFunction2()
+    {
+       document.getElementById("abc").src = "./img/showcase.jpg";
+    }
+
+    </script>
+
+
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="brandling">
+          <h1> <span class="highlight"> Mert</span> EFE </h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="current"><a href="index.html">Anasayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="showcase">
+      <div class="container">
+        <h1> Mert Efe </h1>
+        <p> Software Engineering Student at Beykent University. </p>
+      </div>
+    </section>
+
+    <section id="newsletter">
+      <div class="container">
+         <h1> Daha fazla bilgi için.. </h1>
+         <form>
+           <input type="email" placeholder="Email Giriniz..">
+           <button type="submit" class="button_1">Gönder</button>
+         </form>
+      </div>
+    </section>
+
+    <section id="boxes">
+      <div class="container">
+        <div class="box">
+          <img src="./img/logo_html.png">
+          <h3>HTML5 Markup</h3>
+          <p> HTML 5 is a software solution stack that defines the properties and behaviors of web page content by implementing a markup based pattern to it. HTML 5 is the fifth and current major version of the HTML standard, and subsumes XHTML. </p>
+        </div>
+        <div class="box">
+          <img src="./img/logo_css.png">
+          <h3>CSS3 Styling</h3>
+          <p> Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript. </p>
+        </div>
+        <div class="box">
+          <img src="./img/logo_brush.png">
+          <h3>Graphic Desing</h3>
+          <p> All Graphic Desing Made by Mert Efe. </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="images">
+      <div class="container">
+        <div class="image">
+          <img name="resim" width="400" height="300" class="resim">
+          <img src="./img/showcase.jpg" name="resim1" id="abc" width="400" height="300" style="float:right; border-radius:100px;">
+          <button type="button" onclick="myFunction()" style="border-radius:10px;  width:20%;font-family:Hervetica;margin-right: 5px;
+          background-color:#fa8231; color:wheat; padding:10px 0px; float:right;">YENİ!
+          <button type="button" onclick="myFunction2()" style="border-radius:10px; width:20%;font-family:Hervetica;margin-right: 15px;
+          background-color:#fa8231; color:wheat; padding:10px 0px; float:right;">ESKİ!
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+
+        <table style="margin-left:250px; border-radius:120px;width:20%;" >
+          <tr>
+            <th> AD </th>
+            <th> SOYAD </th>
+            <th> Öğrenci No. </th>
+          </tr>
+          <tr>
+            <td> Mert </td>
+            <td> Efe </td>
+            <td>160313005</td>
+          </tr>
+          <tr>
+            <td> Semih </td>
+            <td> Efe </td>
+            <td>160313009</td>
+          </tr>
+        </table>
+
+    </section>
+
+
+    <section>
+        <div id="artı">
+          <h3 id="hadi"> Math </h3>
+          X =
+          <input type="text" id="n1" style="border-radius:20px; padding:3px;"/><br/>
+          <br/>
+          Y = <input type="text" id="n2" style="border-radius:20px; padding:3px;" /><br/>
+          <br/>
+
+          <select id="operators" style="border-radius:20px;" >
+          <option value='+'>+</option>
+          <option value="-">-</option>
+          <option value="/">/</option>
+          <option value="x">x</option>
+          </select>
+
+          <button type="button" onclick="calc();" style="border-radius:20px; background-color:#badc58;">=</button>
+          <input type="text" id="result" style="border-radius:20px; padding-left:5px;"/>
+        </div>
+    </section>
+
+    <br/>
+
+<footer>
+  <p> Mert Efe Web Desing, Copyright &copy; 2019 </p>
+</footer>
+
+  </body>
+</html>
